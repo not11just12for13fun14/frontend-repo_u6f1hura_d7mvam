@@ -2,6 +2,12 @@ import Spline from '@splinetool/react-spline'
 import { motion } from 'framer-motion'
 
 export default function Hero3D() {
+  const scrollToContact = () => {
+    const el = document.querySelector('#contact')
+    if (!el) return
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <section className="relative h-[90vh] w-full overflow-hidden">
       {/* 3D Scene as the background layer */}
@@ -28,6 +34,16 @@ export default function Hero3D() {
             <p className="mt-6 text-base sm:text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
               Bringing 3–4 years of hands-on experience, I’ve partnered with a wide range of creators and brands, helping shape content that stands out in competitive niches. From short-form highlights to long-form storytelling, I’ve worked with top YouTubers such as Inspector Mindblow, consistently delivering edits that keep audiences hooked.
             </p>
+
+            <div className="pointer-events-auto mt-8">
+              <button
+                onClick={scrollToContact}
+                className="inline-flex items-center gap-2 rounded-full bg-white/90 text-black px-6 py-3 font-medium hover:bg-white transition shadow-lg shadow-white/10"
+              >
+                Hire me
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              </button>
+            </div>
           </motion.div>
         </div>
       </div>
